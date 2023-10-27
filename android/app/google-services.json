@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1031405993963",
+    "project_id": "trendify-3e0c1",
+    "storage_bucket": "trendify-3e0c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031405993963:android:df162d68c93fc475e923ae",
+        "android_client_info": {
+          "package_name": "com.example.trendify_the_news_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCO6SqCWObWSU_3e3VizCyIiRV3XpXaUKQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

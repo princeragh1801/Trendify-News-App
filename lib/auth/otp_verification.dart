@@ -1,0 +1,89 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:trendify_the_news_app/auth/update_password.dart';
+import 'package:trendify_the_news_app/main.dart';
+import 'package:trendify_the_news_app/utils/util.dart';
+
+class OtpVerification extends StatefulWidget {
+  const OtpVerification({super.key});
+
+  @override
+  State<OtpVerification> createState() => _OtpVerificationState();
+}
+
+class _OtpVerificationState extends State<OtpVerification> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: ()=> Navigator.pop(context), 
+          icon:const Icon(Icons.arrow_back)),),
+      body: Container(
+        margin: EdgeInsets.symmetric(
+          vertical: size.height * .02,
+          horizontal: size.width * .08,
+        ),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Text(
+            'Verification',
+            style: GoogleFonts.poppins(
+              fontSize: 18,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          const Text('Enter otp sent to your email address or phone number to verify'),
+          const SizedBox(height: 20,),
+          // Otp field
+          Container(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            decoration: BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
+                color: Colors.grey.shade300),
+            child: TextFormField(
+              decoration: const InputDecoration(
+                  hintText: 'OTP',
+                  hintStyle: TextStyle(fontSize: 15),
+                  border: InputBorder.none),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          
+          // Verify button
+          Container(
+            width: size.width,
+            height: 50,
+            decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(12)),
+                // color: primaryColor,
+                border: Border()),
+            child: ElevatedButton(
+                style: ElevatedButton.styleFrom(backgroundColor: Utils.primaryColor),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UpdatePassword(),
+                    )),
+                child: const Text(
+                  'Verify',
+                  style: TextStyle(color: Colors.white, fontSize: 18),
+                )),
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+          const Text('Haven\'t recieved any code?'),
+          TextButton(
+            onPressed: () {},
+            child: const Text('Resend code')),
+          ],)
+        ]),
+      ),
+    );
+  }
+}
